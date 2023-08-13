@@ -3,3 +3,7 @@
  https://www.udemy.com/user/shaun34/
  https://cryptowizards.net
  https://www.udemy.com/course/dydx-pairs-trading-bot-build-in-python-running-in-the-cloud/#instructor-1
+
+# What not to expect
+
+Getting rich quick SCHEME !!!

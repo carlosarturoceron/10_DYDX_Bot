@@ -13,4 +13,4 @@ Getting rich quick SCHEME !!!
 
 ## Planning
 
-<center><img src="tests/resources/0_planning.png" style="background-color: white" width="1000" height="500"></center>
+<center><img src="tests/resources/0_planning.jpeg" style="background-color: white" width="1000" height="500"></center>

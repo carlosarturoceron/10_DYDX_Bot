@@ -36,3 +36,9 @@ Getting rich quick SCHEME !!!
 ALL THE CONSTANTS
 
 <center><img src="tests/resources/3_constants.png" style="background-color: white" width="1000" height="500"></center>
+
+## Bot structure
+
+ALL THE CONSTANTS
+
+<center><img src="tests/resources/4_bot_plan.png" style="background-color: white" width="300" height="500"></center>

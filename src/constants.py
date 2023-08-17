@@ -7,7 +7,7 @@ from config import STARK_PRIVATE_KEY_MAINNET, DYDX_API_KEY_MAINNET, DYDX_API_SEC
 MODE = 'dev'
 
 # Close all open positions & orders
-ABORT_ALL_POSITIONS = False
+ABORT_ALL_POSITIONS = True
 
 # Find Cointegrated pairs
 FIND_COINTEGRATED = True # tells the bot to look for new cointegrated pairs

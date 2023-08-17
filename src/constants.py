@@ -1,6 +1,5 @@
-from dydx3.constants import API_HOST_GOERLI, API_HOST_MAINNET # gets the HOST info for main and test net
-from decouple import config # from python-decouple enables us to access our ENV variables
 import os
+from dydx3.constants import API_HOST_GOERLI, API_HOST_MAINNET # gets the HOST info for main and test net
 from config import STARK_PRIVATE_KEY_TESTNET, DYDX_API_KEY_TESTNET, DYDX_API_SECRET_TESTNET, DYDX_API_PASSPHRASE_TESTNET
 from config import STARK_PRIVATE_KEY_MAINNET, DYDX_API_KEY_MAINNET, DYDX_API_SECRET_MAINNET, DYDX_API_PASSPHRASE_MAINNET
 
@@ -39,6 +38,7 @@ STARK_PRIVATE_KEY = STARK_PRIVATE_KEY_MAINNET if MODE == 'prod' else STARK_PRIVA
 DYDX_API_KEY = DYDX_API_KEY_MAINNET if MODE == 'prod' else DYDX_API_KEY_TESTNET
 DYDX_API_SECRET = DYDX_API_SECRET_MAINNET if MODE == 'prod' else DYDX_API_SECRET_TESTNET
 DYDX_API_PASSPHRASE = DYDX_API_PASSPHRASE_MAINNET if MODE == 'prod' else DYDX_API_PASSPHRASE_TESTNET
+HOST = API_HOST_MAINNET if MODE == 'prod' else API_HOST_GOERLI
 
 # HTTP Provider
 HTTP_PROVIDER_MAINNET = 'https://eth-mainnet.g.alchemy.com/v2/L8Xvs0EuNzXmCyW1xT1YJ20KicLd1bao'

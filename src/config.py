@@ -22,6 +22,9 @@ publicKey = os.getenv('publicKey')
 publicKeyYCoordinate = os.getenv('publicKeyYCoordinate')
 privateKey = os.getenv('privateKey')
 
+# ETH Private Key
+ETH_PRIVATE_KEY = os.getenv('ETH_PRIVATE_KEY')
+
 # Keys development
 STARK_PRIVATE_KEY_TESTNET = os.getenv('STARK_PRIVATE_KEY_TESTNET')
 DYDX_API_KEY_TESTNET = os.getenv('DYDX_API_KEY_TESTNET')

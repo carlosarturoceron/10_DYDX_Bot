@@ -30,3 +30,9 @@ Getting rich quick SCHEME !!!
 * At least 54% EDGE
 
 * If you don't know your REAL WIN RATE or OPTIMAL POSITION SIZE USE 1%
+
+## Constants
+
+ALL THE CONSTANTS
+
+<center><img src="tests/resources/3_constants.png" style="background-color: white" width="1000" height="500"></center>

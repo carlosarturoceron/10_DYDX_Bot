@@ -19,6 +19,7 @@ if __name__ == '__main__':
         try:
             print('Closing all positions...')
             kill_switch = abort_all_positions(client)
+            print('This are the positions that where closed by the kill switch:', kill_switch)
         except Exception as e:
             print('Error in Kill Switch', e)
 

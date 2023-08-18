@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 
 from pprint import pprint
 
+from utils.utils import format_number
+
 
 # Place market order
 def place_market_order(client,market,side,size,price,reduce_only):
@@ -63,10 +65,10 @@ def abort_all_positions(client):
 
     # Handle open positions
     closed_orders = []
+
     if len(all_position) > 0:
         
         # Loop trough each position
-
         for position in all_position:
             
             # Get market
@@ -77,4 +79,29 @@ def abort_all_positions(client):
             if position['side'] == 'LONG':
                 side = 'SELL'
 
-            print(market, side)
+            # Getting the price
+            price = float(position['entryPrice'])
+            accept_price = price * 1.7 if side == 'BUY' else price * 0.3 # Multiplier for worst acceptable price
+            tick_size = markets['markets'][market]['tickSize']
+            accept_price = format_number(accept_price, tick_size) # Function that formats the price to dydx acceptable's decimals
+
+
+            print('Placing order...')
+            # Place order to close
+            order = place_market_order(
+                client=client,
+                market=market,
+                side=side,
+                size=position['sumOpen'],
+                price= accept_price,
+                reduce_only=True # True because it is an open position that we want to close
+            )       
+            print(order.data)
+            # Append the result
+            closed_orders.append(order.data)
+
+            # Protect API
+            time.sleep(0.2)
+
+        # Returned closed orders
+        return closed_orders

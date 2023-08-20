@@ -42,3 +42,9 @@ ALL THE CONSTANTS
 ALL THE CONSTANTS
 
 <center><img src="tests/resources/4_bot_plan.png" style="background-color: white" width="300" height="500"></center>
+
+## Planning Stage 2
+
+ALL THE CONSTANTS
+
+<center><img src="tests/resources/5_planning_st2.png" style="background-color: white" width="500" height="500"></center>

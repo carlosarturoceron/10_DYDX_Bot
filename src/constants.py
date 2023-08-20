@@ -16,7 +16,7 @@ FIND_COINTEGRATED = True # tells the bot to look for new cointegrated pairs
 PLACE_TRADES = True # we DO want to go and place trades
 
 # Resolution
-RESOLUTION = '1h'
+RESOLUTION = '1HOUR' # Can be one of 1DAY, 4HOURS, 1HOUR, 30MINS, 15MINS, 5MINS, 1MIN. at https://dydxprotocol.github.io/v3-teacher/#historical-funding
 
 # Sats Window
 WINDOW = 21 # when calculating stats we need a rolling window, this is going to use 21

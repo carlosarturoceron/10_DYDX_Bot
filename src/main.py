@@ -25,26 +25,26 @@ if __name__ == '__main__':
         except Exception as e:
             print('Error in Kill Switch', e)
 
-# Finding cointegrated pairs
-if FIND_COINTEGRATED == True:
-    
-    # Construct Market Prices
-    try:
-        print('Fetching market prices, pelase allow 3 mins...')
-        df_market_prices = construct_market_prices(client=client)
-    except Exception as e:
-        print('Error constructing market prices all positions...', e)
-        exit(1)
-
-    # Store Cointegrated Pairs
-    try:
-        print('Storing Cointegrated pairs...')
-        stores_resulst = store_cointegration_results(df_market_prices)
-        if stores_resulst != "saved":
-            print('...')
+    # Finding cointegrated pairs
+    if FIND_COINTEGRATED == True:
+        
+        # Construct Market Prices
+        try:
+            print('Fetching market prices, pelase allow 3 mins...')
+            df_market_prices = construct_market_prices(client=client)
+        except Exception as e:
+            print('Error constructing market prices all positions...', e)
             exit(1)
-    except Exception as e:
-        print('++++++++Exception saving cointegrated pairs...', e)
-        exit(1)
+
+        # Store Cointegrated Pairs
+        try:
+            print('Storing Cointegrated pairs...')
+            stores_resulst = store_cointegration_results(df_market_prices)
+            if stores_resulst != "saved":
+                print('...')
+                exit(1)
+        except Exception as e:
+            print('++++++++Exception saving cointegrated pairs...', e)
+            exit(1)
 
     

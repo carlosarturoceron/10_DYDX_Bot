@@ -48,5 +48,19 @@ ALL THE CONSTANTS
 <center><img src="tests/resources/5_planning_st2.png" style="background-color: white" width="500" height="500"></center>
 
 ### Stage 3
+---
+Stage 3-A:
+
+* Create a Bot Agent Class: because we will open many positions, it makes sense to create a class
+
+    * Open Trades.
+
+    * Check Validity and Success of those trades.
+
+    * Decision Factor?: get recent candles, check open positions, place and save trades.
+
+Stage 3-B:
+
+* Check for Exits and Open trades
 
 <center><img src="tests/resources/6_planning_st3.png" style="background-color: white" width="600" height="400"></center>

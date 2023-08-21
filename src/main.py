@@ -1,8 +1,9 @@
 from connections import connect_dydx
-from constants import ABORT_ALL_POSITIONS, FIND_COINTEGRATED
+from constants import ABORT_ALL_POSITIONS, FIND_COINTEGRATED, PLACE_TRADES
 from func_private import abort_all_positions
 from utils.func_public import construct_market_prices
 from utils.cointegration import store_cointegration_results
+from bot.entry_pairs import open_positions
 
 if __name__ == '__main__':
 
@@ -47,4 +48,17 @@ if __name__ == '__main__':
             print('++++++++Exception saving cointegrated pairs...', e)
             exit(1)
 
-    
+    #  ---------ROOM FOR OTHER CODE---------
+    # Managing Existing Trades, While loop
+
+        # Place trades for opening positions
+    # Finding cointegrated pairs
+    if PLACE_TRADES == True:
+        
+        # Construct Market Prices
+        try:
+            print('Finding trading opportunities...')
+            open_positions(client)
+        except Exception as e:
+            print('Error PLACING TRADES...', e)
+            exit(1)

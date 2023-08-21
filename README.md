@@ -59,8 +59,10 @@ Stage 3-A:
 
     * Decision Factor?: get recent candles, check open positions, place and save trades.
 
+<center><img src="tests/resources/6_planning_st3.png" style="background-color: white" width="600" height="400"></center>
+
 Stage 3-B:
 
 * Check for Exits and Open trades
 
-<center><img src="tests/resources/6_planning_st3.png" style="background-color: white" width="600" height="400"></center>
+<center><img src="tests/resources/7_ready_openorder.png" style="background-color: white" width="600" height="400"></center>

@@ -11,6 +11,34 @@ from datetime import datetime, timedelta
 ISO_TIMES = get_ISO_times()
 pprint(ISO_TIMES)
 
+# Get candles RECENT
+def get_candle_recent(client, market):
+    """
+    Get recent candles to calculate spread and stats
+    """
+
+    # Define output
+    close_prices = []
+
+    # Protect API
+    time.sleep(0.2)
+
+    # Get data
+    candles = client.public.get_candles(
+        market=market,
+        resolution=RESOLUTION,
+        limit=100
+    )
+
+    # Structure Data
+    for candle in candles.data["candles"]:
+        close_prices.append(candle["close"])
+
+    # Construct and return close price series
+    close_prices.reverse()
+    prices_result = np.array(close_prices).astype(float)
+    return prices_result
+
 # Get Candles historical
 def get_candles_historical(client, market):
     # Define output

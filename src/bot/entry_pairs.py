@@ -12,6 +12,9 @@ import numpy as np
 # Pretty Print
 from pprint import pprint
 
+# JSON
+import json
+
 def open_positions(client):
     """
     Manages finding triggers for trade entry
@@ -106,6 +109,41 @@ def open_positions(client):
                             break
 
                         # Create bot agent
-                        print("HIT CREATE BOT AGENT")
-                        print(base_market, base_side, base_size, base_price, accept_base_price)
-                        print(pair_market, pair_side, pair_size, pair_price, accept_pair_price)
+                        bot_agent = BotAgent(
+                            client,
+                            market_1=base_market,
+                            market_2=pair_market,
+                            base_side=base_side,
+                            base_size=base_size,
+                            base_price=accept_base_price,
+                            pair_side=pair_side,
+                            pair_size=pair_size,
+                            pair_price=accept_pair_price,
+                            accept_failsafe_base_price=accept_failsafe_base_price,
+                            z_score=z_score,
+                            half_life=half_life,
+                            hedge_ratio=hedge_ratio)
+                        
+                        # Open Trades
+                        try:
+                            bot_open_dict = bot_agent.open_trades()
+
+                            # Handle success in opening trades
+                            if bot_open_dict["pair_status"] == "LIVE":
+
+                                # Appent to list of bot agents
+                                bot_agents.append(bot_open_dict)
+                                del bot_open_dict
+
+                                # Confirm live status in print
+                                print("Trade status: LIVE")
+                                print("~~~~~~~")
+                        except Exception as e:
+                            print("THIS FAILED", index, "BECAUSE", e, "MOVING ON")
+                            pass
+
+    # Save Agents
+    print({f"Success: {len(bot_agents)} NEW PAIRS LIVE"})
+    if len(bot_agents) > 0:
+        with open("bot_agents.json", "w") as f:
+            json.dump(bot_agents, f)

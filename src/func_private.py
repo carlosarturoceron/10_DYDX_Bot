@@ -28,7 +28,11 @@ def is_open_position(client,market):
 # Check order status
 def check_order_status(client,order_id):
     order = client.private.get_order_by_id(order_id)
-    return order.data['status']
+    if order.data:
+        print("ORDER DATA",order.data)
+        if "order" in order.data.keys():
+            return order.data["order"]["status"]
+    return "FAILED CHECKING ORDER STATUS, THERE ARE NO STATUS"
 
 # Place market order
 def place_market_order(client,market,side,size,price,reduce_only):

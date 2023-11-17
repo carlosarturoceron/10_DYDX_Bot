@@ -7,7 +7,7 @@ from config import STARK_PRIVATE_KEY_MAINNET, DYDX_API_KEY_MAINNET, DYDX_API_SEC
 MODE = 'dev'
 
 # Close all open positions & orders
-ABORT_ALL_POSITIONS = False
+ABORT_ALL_POSITIONS = True
 
 # Find Cointegrated pairs
 FIND_COINTEGRATED = True # tells the bot to look for new cointegrated pairs
@@ -24,7 +24,7 @@ WINDOW = 21 # when calculating stats we need a rolling window, this is going to 
 # Thresholds - Opening
 MAX_HALF_LIFE = 24 # half life of cointegration, better to keep it low
 ZSCORE_THRESH = 1.5 # ZSCORE trigger
-USD_PER_TRADE = 50 # amount bet
+USD_PER_TRADE = 500 # amount bet
 USD_MIN_COLLATERAL = 1000 # if >= the bot can place orders
 
 # Thresholds - Closing
